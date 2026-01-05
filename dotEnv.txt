@@ -1,0 +1,64 @@
+# https://vercel.com/docs/storage/vercel-postgres
+DATABASE_URL="..."
+
+# Auth
+# # RUN: npx auth secret
+AUTH_SECRET="..."
+# # Guide: https://developers.google.com/workspace/marketplace/configure-oauth-consent-screen# 
+# # https://console.cloud.google.com/apis/credentials
+AUTH_GOOGLE_ID="..."
+AUTH_GOOGLE_SECRET="..."
+# # These stay the same
+AUTH_DRIZZLE_URL="postgres://postgres:postgres@127.0.0.1:5432/db"
+AUTH_TRUST_HOST="http://localhost:3000"
+
+# Supabase
+# # Select Project > Project Settings > API
+# Project URL
+NEXT_PUBLIC_SUPABASE_URL="..."
+# service_role
+SUPABASE_SERVICE_KEY="..."
+
+# Stripe
+# # Get from https://dashboard.stripe.com/apikeys
+STRIPE_SECRET_KEY="sk_test_..."
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="pk_test_..."
+# # Webhook endpoint secret (for handling completed payments)
+STRIPE_WEBHOOK_SECRET="whsec_..."
+
+# Cloudflare R2 Storage
+# # Get from Cloudflare Dashboard > R2 Object Storage > Manage R2 API tokens
+# IMPORTANT: R2_ENDPOINT should NOT include the bucket name
+R2_ENDPOINT="https://your-account-id.r2.cloudflarestorage.com"
+R2_ACCESS_KEY_ID="your-access-key-id"
+R2_SECRET_ACCESS_KEY="your-secret-access-key"
+R2_BUCKET="your-bucket-name"
+
+# RunPod API
+# # Get from RunPod Dashboard > Settings > API Keys
+# # IMPORTANT: NEVER commit real API keys! Use .env.local (gitignored)
+RUNPOD_API_KEY="your-runpod-api-key-here"
+# # RunPod Training Endpoint URL (base URL without /run or /status)
+RUNPOD_TRAINING_ENDPOINT="https://api.runpod.ai/v2/your-endpoint-id"
+
+# Webhook Security
+# # Generate a secure random token for webhook authentication
+# # This token should be added to webhook providers and used to authenticate webhook calls
+CUSTOM_WEBHOOK_TOKEN="your-custom-token-here"
+NEXT_PUBLIC_APP_URL="your-url"
+
+# Sentry (Error Tracking)
+# # Get from https://sentry.io/settings/{org}/projects/{project}/keys/
+NEXT_PUBLIC_SENTRY_DSN="https://..."
+
+# GitHub Actions (Optional - for model deployment)
+# # Get from https://github.com/settings/tokens (create a personal access token with repo scope)
+GITHUB_TOKEN="ghp_..."
+# # Format: "username/repo-name"
+GITHUB_REPO="username/repo-name"
+# # Optional: Name of the workflow file (defaults to 'build-and-deploy.yml')
+GITHUB_WORKFLOW="build-and-deploy.yml"
+
+# Cloudflare R2 Storage (Optional Configuration)
+# # Optional: URL expiration time in seconds (default: 3600 = 1 hour)
+R2_URL_EXPIRATION="3600"

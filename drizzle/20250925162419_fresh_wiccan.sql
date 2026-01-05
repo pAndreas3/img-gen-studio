@@ -1,0 +1,1 @@
+ALTER TABLE "models" ADD COLUMN "training_run_id" text;

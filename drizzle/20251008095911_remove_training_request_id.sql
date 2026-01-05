@@ -1,0 +1,1 @@
+ALTER TABLE "models" DROP COLUMN "training_request_id";
